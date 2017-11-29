@@ -1,4 +1,5 @@
 'use strict'
+const path = require('path')
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
@@ -29,6 +30,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       errors: true,
     } : false,
     publicPath: config.dev.assetsPublicPath,
+    contentBase: config.dev.contentBase,  // krpano 静态文件
     proxy: config.dev.proxyTable,
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
